@@ -96,6 +96,7 @@ curl.exe -X POST "http://localhost:8000/feedback" `
   -H "X-API-Key: <API_KEY>" `
   --data-binary "@payload.json"
 ```
+
 Attendu: Doit contenir JSON avec feedback_id, stored, topic
 
 ---
@@ -110,7 +111,7 @@ curl.exe -X POST "http://localhost:8000/feedback" -u ndai:ndai-secret -H "Conten
 
 ## MiniO
 Aller dans http://localhost:9001
-Login : mino
+Login : minio
 Mot de passe: minio12345
 
 Bucket attendu dans : raw_feedback/ 

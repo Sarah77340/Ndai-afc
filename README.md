@@ -111,8 +111,8 @@ curl.exe -X POST "http://localhost:8000/feedback" -u ndai:ndai-secret -H "Conten
 
 ## MiniO
 Aller dans http://localhost:9001
-Login : minio
-Mot de passe: minio12345
+- Login : minio
+- Mot de passe: minio12345
 
 Bucket attendu dans : raw_feedback/ 
 Avec fichier json

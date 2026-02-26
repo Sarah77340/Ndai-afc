@@ -3,10 +3,10 @@ import os
 import time
 import requests
 
-API_URL = os.getenv("API_URL", "http://localhost:8000/feedback")
+API_URL = os.getenv("API_URL", "http://localhost:8000/api")
 API_KEY = os.getenv("API_KEY")
 INPUT_FILE = "feedback_data.json"
-SLEEP_SECONDS = 0.5  # délai entre feedback (simul temps réel)
+SLEEP_SECONDS = 0.5
 success = 0
 failed = 0
 headers = {

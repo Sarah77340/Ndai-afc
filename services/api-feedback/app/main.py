@@ -1,3 +1,4 @@
+import base64
 import json
 import os
 from datetime import datetime, timezone
@@ -5,7 +6,7 @@ from uuid import uuid4
 
 import boto3
 from confluent_kafka import Producer
-from fastapi import FastAPI, Header, HTTPException
+from fastapi import FastAPI, Header, HTTPException, Request
 from pydantic import BaseModel, Field
 
 app = FastAPI(title="NDAI - Private Feedback API", version="0.1.0")
@@ -13,20 +14,62 @@ app = FastAPI(title="NDAI - Private Feedback API", version="0.1.0")
 TOPIC = os.getenv("KAFKA_TOPIC", "feedback.created")
 API_KEY = os.getenv("API_KEY", "")
 
+BASIC_USER = os.getenv("BASIC_USER", "")
+BASIC_PASS = os.getenv("BASIC_PASS", "")
+
+
 class FeedbackIn(BaseModel):
     username: str = Field(min_length=1)
     feedback_date: str = Field(min_length=10)
     campaign_id: str = Field(min_length=4)
     comment: str = Field(min_length=1)
 
-def require_api_key(x_api_key: str | None):
-    if not API_KEY:
-        raise HTTPException(status_code=500, detail="API_KEY not configured on server")
-    if x_api_key != API_KEY:
-        raise HTTPException(status_code=401, detail="Unauthorized")
+
+def _basic_auth_ok(auth_header: str) -> bool:
+    """
+    Validate HTTP Basic Auth header against BASIC_USER/BASIC_PASS.
+    Expected header format: "Basic base64(user:pass)".
+    """
+    if not (BASIC_USER and BASIC_PASS):
+        return False
+    if not auth_header or not auth_header.startswith("Basic "):
+        return False
+
+    try:
+        b64 = auth_header.split(" ", 1)[1].strip()
+        decoded = base64.b64decode(b64).decode("utf-8")
+        user, pwd = decoded.split(":", 1)
+        return user == BASIC_USER and pwd == BASIC_PASS
+    except Exception:
+        return False
+
+
+def authorize(request: Request, x_api_key: str | None):
+    """
+    Authorize request if:
+    - X-API-Key matches API_KEY (manual tests / internal clients)
+    OR
+    - Basic Auth matches BASIC_USER/BASIC_PASS (api_pusher)
+    """
+    # 1) API Key path
+    if API_KEY and x_api_key == API_KEY:
+        return
+
+    # 2) Basic Auth path
+    auth_header = request.headers.get("Authorization", "")
+    if _basic_auth_ok(auth_header):
+        return
+
+    # (Use for setup) => if server has not configured, it return explicit error
+    if not API_KEY and not (BASIC_USER and BASIC_PASS):
+        raise HTTPException(status_code=500, detail="No auth configured on server (API_KEY or BASIC_USER/BASIC_PASS)")
+
+    raise HTTPException(status_code=401, detail="Unauthorized")
+
 
 def kafka_producer() -> Producer:
     return Producer({"bootstrap.servers": os.getenv("KAFKA_BOOTSTRAP", "kafka:9092")})
+
 
 def s3_client():
     return boto3.client(
@@ -37,13 +80,15 @@ def s3_client():
         region_name="us-east-1",
     )
 
+
 @app.get("/health")
 def health():
     return {"status": "ok"}
 
+
 @app.post("/feedback")
-def create_feedback(payload: FeedbackIn, x_api_key: str | None = Header(default=None)):
-    require_api_key(x_api_key)
+def create_feedback(payload: FeedbackIn, request: Request, x_api_key: str | None = Header(default=None)):
+    authorize(request, x_api_key)
 
     feedback_id = str(uuid4())
     event = payload.model_dump()

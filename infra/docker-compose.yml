@@ -76,6 +76,8 @@ services:
       context: ../services/api-feedback
     environment:
       API_KEY: ${API_KEY}
+      BASIC_USER: ${BASIC_USER}
+      BASIC_PASS: ${BASIC_PASS}
       KAFKA_BOOTSTRAP: kafka:9092
       KAFKA_TOPIC: feedback.created
       S3_ENDPOINT: http://minio:9000

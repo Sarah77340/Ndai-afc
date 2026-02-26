@@ -1,6 +1,7 @@
 services:
   postgres:
     image: postgres:16
+    container_name: infra-postgres-1
     environment:
       POSTGRES_USER: ndai
       POSTGRES_PASSWORD: ndai
@@ -15,6 +16,7 @@ services:
 
   minio:
     image: minio/minio:latest
+    container_name: infra-minio-1
     command: server /data --console-address ":9001"
     environment:
       MINIO_ROOT_USER: minio
@@ -23,48 +25,34 @@ services:
       - "9000:9000"
       - "9001:9001"
 
-  #kafka:
-  #  image: bitnami/kafka:latest
-  #  ports:
-  #    - "9092:9092"
-  #  environment:
-  #    # KRaft mode (pas besoin de Zookeeper)
-  #    KAFKA_CFG_NODE_ID: 1
-  #    KAFKA_CFG_PROCESS_ROLES: controller,broker
-  #    KAFKA_CFG_CONTROLLER_QUORUM_VOTERS: 1@kafka:9093
-  #    KAFKA_CFG_LISTENERS: PLAINTEXT://:9092,CONTROLLER://:9093
-  #    KAFKA_CFG_ADVERTISED_LISTENERS: PLAINTEXT://localhost:9092
-  #    KAFKA_CFG_LISTENER_SECURITY_PROTOCOL_MAP: CONTROLLER:PLAINTEXT,PLAINTEXT:PLAINTEXT
-  #    KAFKA_CFG_CONTROLLER_LISTENER_NAMES: CONTROLLER
-  #    KAFKA_CFG_AUTO_CREATE_TOPICS_ENABLE: "true"
-  #    ALLOW_PLAINTEXT_LISTENER: "yes"
-  #  healthcheck:
-  #    test: ["CMD-SHELL", "kafka-topics.sh --bootstrap-server localhost:9092 --list >/dev/null 2>&1 || exit 1"]
-  #    interval: 10s
-  #    timeout: 5s
-  #    retries: 20
-
   zookeeper:
     image: confluentinc/cp-zookeeper:7.6.1
+    container_name: infra-zookeeper-1
     environment:
       ZOOKEEPER_CLIENT_PORT: 2181
       ZOOKEEPER_TICK_TIME: 2000
 
   kafka:
     image: confluentinc/cp-kafka:7.6.1
+    container_name: infra-kafka-1
     depends_on:
       - zookeeper
     ports:
       - "9092:9092"
+      - "29092:29092"
     environment:
       KAFKA_BROKER_ID: 1
       KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
-      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://localhost:9092
-      KAFKA_LISTENERS: PLAINTEXT://0.0.0.0:9092
+      # INTERNAL pour Spark/API dans Docker, EXTERNAL pour ton Mac
+      KAFKA_LISTENERS: INTERNAL://0.0.0.0:9092,EXTERNAL://0.0.0.0:29092
+      KAFKA_ADVERTISED_LISTENERS: INTERNAL://infra-kafka-1:9092,EXTERNAL://localhost:29092
+      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: INTERNAL:PLAINTEXT,EXTERNAL:PLAINTEXT
+      KAFKA_INTER_BROKER_LISTENER_NAME: INTERNAL
       KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
 
   metabase:
     image: metabase/metabase:latest
+    container_name: infra-metabase-1
     ports:
       - "3000:3000"
     depends_on:
@@ -74,11 +62,12 @@ services:
   api-feedback:
     build:
       context: ../services/api-feedback
+    container_name: infra-api-feedback-1
     environment:
       API_KEY: ${API_KEY}
       BASIC_USER: ${BASIC_USER}
       BASIC_PASS: ${BASIC_PASS}
-      KAFKA_BOOTSTRAP: kafka:9092
+      KAFKA_BOOTSTRAP: infra-kafka-1:9092
       KAFKA_TOPIC: feedback.created
       S3_ENDPOINT: http://minio:9000
       S3_ACCESS_KEY: minio

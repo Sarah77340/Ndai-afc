@@ -1,36 +1,40 @@
 from pyspark.sql import SparkSession
-from pyspark.sql.functions import col, to_date, lit
+from pyspark.sql.functions import from_json, col
+from pyspark.sql.types import StructType, StructField, StringType
 
-# Configuration simplifiée (sans S3 pour l'instant pour valider le JSON)
+# Configuration pour le réseau DOCKER
+KAFKA_BOOTSTRAP_SERVERS = "infra-kafka-1:9092"
+KAFKA_TOPIC = "feedback.created"
+
 spark = SparkSession.builder \
-    .appName("IngestionFeedbackLocal") \
+    .appName("FeedbackStreaming") \
     .getOrCreate()
 
-print("--- LECTURE DU FICHIER JSON ---")
+# Schéma des données
+schema = StructType([
+    StructField("username", StringType(), True),
+    StructField("campaign_id", StringType(), True),
+    StructField("comment", StringType(), True),
+    StructField("feedback_date", StringType(), True)
+])
 
-# On lit le fichier directement depuis le volume monté (/app)
-df = spark.read.option("multiLine", "true").json("/app/data/feedback_data.json")
-
-# Vérification du schéma
-df.printSchema()
+# Lecture du flux Kafka
+df = spark.readStream \
+    .format("kafka") \
+    .option("kafka.bootstrap.servers", KAFKA_BOOTSTRAP_SERVERS) \
+    .option("subscribe", KAFKA_TOPIC) \
+    .option("startingOffsets", "earliest") \
+    .load()
 
 # Transformation
-df_final = df.withColumn("feedback_date", to_date(col("feedback_date"), "yyyy-MM-dd")) \
-             .withColumn("sentiment_score", lit(0.0)) \
-             .withColumn("sentiment_label", lit("A TRAITER"))
+df_parsed = df.selectExpr("CAST(value AS STRING)") \
+    .select(from_json(col("value"), schema).alias("data")) \
+    .select("data.*")
 
-print("--- INSERTION DANS POSTGRES ---")
+# Affichage console pour le test
+query_console = df_parsed.writeStream \
+    .outputMode("append") \
+    .format("console") \
+    .start()
 
-# Écriture vers Postgres (On utilise le nom du service 'infra-postgres-1' car on est sur le réseau 'infra_default')
-df_final.write \
-    .format("jdbc") \
-    .option("url", "jdbc:postgresql://infra-postgres-1:5432/ndai") \
-    .option("dbtable", "campaign_feedback_enriched") \
-    .option("user", "ndai") \
-    .option("password", "ndai") \
-    .option("driver", "org.postgresql.Driver") \
-    .mode("append") \
-    .save()
-
-print("Feedbacks importés avec succès depuis le fichier local !")
-spark.stop()
+query_console.awaitTermination()

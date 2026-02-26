@@ -1,0 +1,602 @@
+[
+    {
+        "username": "user_fb68",
+        "feedback_date": "2025-04-04",
+        "campaign_id": "CAMP147",
+        "comment": "Great campaign!"
+    },
+    {
+        "username": "user_fb46",
+        "feedback_date": "2025-02-23",
+        "campaign_id": "CAMP892",
+        "comment": "Not very engaging."
+    },
+    {
+        "username": "user_fb81",
+        "feedback_date": "2025-09-21",
+        "campaign_id": "CAMP274",
+        "comment": "Loved the product presentation."
+    },
+    {
+        "username": "user_fb63",
+        "feedback_date": "2025-08-20",
+        "campaign_id": "CAMP542",
+        "comment": "Great campaign!"
+    },
+    {
+        "username": "user_fb69",
+        "feedback_date": "2025-08-05",
+        "campaign_id": "CAMP484",
+        "comment": "Too many details, hard to follow."
+    },
+    {
+        "username": "user4",
+        "feedback_date": "2025-04-04",
+        "campaign_id": "CAMP139",
+        "comment": "Loved the product presentation."
+    },
+    {
+        "username": "user_fb17",
+        "feedback_date": "2025-05-02",
+        "campaign_id": "CAMP244",
+        "comment": "Clear and concise message."
+    },
+    {
+        "username": "user2",
+        "feedback_date": "2025-03-12",
+        "campaign_id": "CAMP291",
+        "comment": "Clear and concise message."
+    },
+    {
+        "username": "user_fb69",
+        "feedback_date": "2025-02-24",
+        "campaign_id": "CAMP839",
+        "comment": "Not very engaging."
+    },
+    {
+        "username": "user_fb99",
+        "feedback_date": "2025-09-27",
+        "campaign_id": "CAMP352",
+        "comment": "Not very engaging."
+    },
+    {
+        "username": "user_fb97",
+        "feedback_date": "2025-02-06",
+        "campaign_id": "CAMP605",
+        "comment": "Too many details, hard to follow."
+    },
+    {
+        "username": "user_fb82",
+        "feedback_date": "2025-05-25",
+        "campaign_id": "CAMP494",
+        "comment": "Creative and fun approach!"
+    },
+    {
+        "username": "user_fb42",
+        "feedback_date": "2025-07-04",
+        "campaign_id": "CAMP372",
+        "comment": "Clear and concise message."
+    },
+    {
+        "username": "user_fb47",
+        "feedback_date": "2025-01-20",
+        "campaign_id": "CAMP737",
+        "comment": "Great campaign!"
+    },
+    {
+        "username": "user_fb41",
+        "feedback_date": "2025-06-05",
+        "campaign_id": "CAMP548",
+        "comment": "Great campaign!"
+    },
+    {
+        "username": "user_fb52",
+        "feedback_date": "2025-08-18",
+        "campaign_id": "CAMP334",
+        "comment": "Not very engaging."
+    },
+    {
+        "username": "user_fb51",
+        "feedback_date": "2025-04-11",
+        "campaign_id": "CAMP151",
+        "comment": "Creative and fun approach!"
+    },
+    {
+        "username": "user_fb43",
+        "feedback_date": "2025-07-09",
+        "campaign_id": "CAMP514",
+        "comment": "Not very engaging."
+    },
+    {
+        "username": "user_fb64",
+        "feedback_date": "2025-01-03",
+        "campaign_id": "CAMP513",
+        "comment": "Great campaign!"
+    },
+    {
+        "username": "user_fb24",
+        "feedback_date": "2025-04-20",
+        "campaign_id": "CAMP878",
+        "comment": "Creative and fun approach!"
+    },
+    {
+        "username": "user_fb69",
+        "feedback_date": "2025-03-14",
+        "campaign_id": "CAMP606",
+        "comment": "Not very engaging."
+    },
+    {
+        "username": "user_fb50",
+        "feedback_date": "2025-09-22",
+        "campaign_id": "CAMP669",
+        "comment": "Not very engaging."
+    },
+    {
+        "username": "user4",
+        "feedback_date": "2025-04-23",
+        "campaign_id": "CAMP400",
+        "comment": "Creative and fun approach!"
+    },
+    {
+        "username": "user13",
+        "feedback_date": "2025-02-25",
+        "campaign_id": "CAMP742",
+        "comment": "Creative and fun approach!"
+    },
+    {
+        "username": "user7",
+        "feedback_date": "2025-09-02",
+        "campaign_id": "CAMP421",
+        "comment": "Too many details, hard to follow."
+    },
+    {
+        "username": "user14",
+        "feedback_date": "2025-10-07",
+        "campaign_id": "CAMP324",
+        "comment": "Clear and concise message."
+    },
+    {
+        "username": "user_fb99",
+        "feedback_date": "2025-08-04",
+        "campaign_id": "CAMP649",
+        "comment": "Great campaign!"
+    },
+    {
+        "username": "user_fb56",
+        "feedback_date": "2025-01-17",
+        "campaign_id": "CAMP896",
+        "comment": "Too many details, hard to follow."
+    },
+    {
+        "username": "user_fb75",
+        "feedback_date": "2025-08-04",
+        "campaign_id": "CAMP326",
+        "comment": "Too many details, hard to follow."
+    },
+    {
+        "username": "user_fb66",
+        "feedback_date": "2025-09-03",
+        "campaign_id": "CAMP678",
+        "comment": "Clear and concise message."
+    },
+    {
+        "username": "user_fb84",
+        "feedback_date": "2025-02-12",
+        "campaign_id": "CAMP878",
+        "comment": "Could be better organized."
+    },
+    {
+        "username": "user_fb60",
+        "feedback_date": "2025-06-29",
+        "campaign_id": "CAMP401",
+        "comment": "Excellent marketing strategy."
+    },
+    {
+        "username": "user7",
+        "feedback_date": "2025-03-25",
+        "campaign_id": "CAMP971",
+        "comment": "Could be better organized."
+    },
+    {
+        "username": "user_fb85",
+        "feedback_date": "2025-02-07",
+        "campaign_id": "CAMP480",
+        "comment": "Great campaign!"
+    },
+    {
+        "username": "user_fb65",
+        "feedback_date": "2025-04-25",
+        "campaign_id": "CAMP166",
+        "comment": "Could be better organized."
+    },
+    {
+        "username": "user_fb63",
+        "feedback_date": "2025-04-30",
+        "campaign_id": "CAMP456",
+        "comment": "Too many details, hard to follow."
+    },
+    {
+        "username": "user_fb71",
+        "feedback_date": "2025-08-10",
+        "campaign_id": "CAMP685",
+        "comment": "Could be better organized."
+    },
+    {
+        "username": "user_fb61",
+        "feedback_date": "2025-02-24",
+        "campaign_id": "CAMP708",
+        "comment": "Creative and fun approach!"
+    },
+    {
+        "username": "user_fb76",
+        "feedback_date": "2025-01-19",
+        "campaign_id": "CAMP915",
+        "comment": "Clear and concise message."
+    },
+    {
+        "username": "user_fb46",
+        "feedback_date": "2025-02-06",
+        "campaign_id": "CAMP321",
+        "comment": "Great campaign!"
+    },
+    {
+        "username": "user8",
+        "feedback_date": "2025-06-21",
+        "campaign_id": "CAMP663",
+        "comment": "Loved the product presentation."
+    },
+    {
+        "username": "user_fb54",
+        "feedback_date": "2025-07-09",
+        "campaign_id": "CAMP945",
+        "comment": "Loved the product presentation."
+    },
+    {
+        "username": "user_fb98",
+        "feedback_date": "2025-05-12",
+        "campaign_id": "CAMP813",
+        "comment": "Excellent marketing strategy."
+    },
+    {
+        "username": "user_fb100",
+        "feedback_date": "2025-10-18",
+        "campaign_id": "CAMP990",
+        "comment": "Creative and fun approach!"
+    },
+    {
+        "username": "user_fb48",
+        "feedback_date": "2025-05-05",
+        "campaign_id": "CAMP883",
+        "comment": "Loved the product presentation."
+    },
+    {
+        "username": "user_fb88",
+        "feedback_date": "2025-03-04",
+        "campaign_id": "CAMP742",
+        "comment": "Clear and concise message."
+    },
+    {
+        "username": "user_fb52",
+        "feedback_date": "2025-08-24",
+        "campaign_id": "CAMP623",
+        "comment": "Clear and concise message."
+    },
+    {
+        "username": "user_fb38",
+        "feedback_date": "2025-10-13",
+        "campaign_id": "CAMP656",
+        "comment": "Creative and fun approach!"
+    },
+    {
+        "username": "user_fb82",
+        "feedback_date": "2025-08-21",
+        "campaign_id": "CAMP418",
+        "comment": "Creative and fun approach!"
+    },
+    {
+        "username": "user_fb95",
+        "feedback_date": "2025-03-09",
+        "campaign_id": "CAMP824",
+        "comment": "Loved the product presentation."
+    },
+    {
+        "username": "user_fb36",
+        "feedback_date": "2025-05-01",
+        "campaign_id": "CAMP276",
+        "comment": "Clear and concise message."
+    },
+    {
+        "username": "user_fb45",
+        "feedback_date": "2025-10-24",
+        "campaign_id": "CAMP634",
+        "comment": "Excellent marketing strategy."
+    },
+    {
+        "username": "user_fb37",
+        "feedback_date": "2025-05-08",
+        "campaign_id": "CAMP954",
+        "comment": "Could be better organized."
+    },
+    {
+        "username": "user8",
+        "feedback_date": "2025-09-16",
+        "campaign_id": "CAMP142",
+        "comment": "Not very engaging."
+    },
+    {
+        "username": "user_fb55",
+        "feedback_date": "2025-03-19",
+        "campaign_id": "CAMP253",
+        "comment": "Too many details, hard to follow."
+    },
+    {
+        "username": "user_fb34",
+        "feedback_date": "2025-03-09",
+        "campaign_id": "CAMP535",
+        "comment": "Creative and fun approach!"
+    },
+    {
+        "username": "user_fb73",
+        "feedback_date": "2025-03-14",
+        "campaign_id": "CAMP204",
+        "comment": "Too many details, hard to follow."
+    },
+    {
+        "username": "user_fb91",
+        "feedback_date": "2025-03-19",
+        "campaign_id": "CAMP605",
+        "comment": "Great campaign!"
+    },
+    {
+        "username": "user12",
+        "feedback_date": "2025-10-10",
+        "campaign_id": "CAMP789",
+        "comment": "Excellent marketing strategy."
+    },
+    {
+        "username": "user_fb41",
+        "feedback_date": "2025-01-21",
+        "campaign_id": "CAMP752",
+        "comment": "Excellent marketing strategy."
+    },
+    {
+        "username": "user_fb71",
+        "feedback_date": "2025-10-06",
+        "campaign_id": "CAMP151",
+        "comment": "Creative and fun approach!"
+    },
+    {
+        "username": "user_fb73",
+        "feedback_date": "2025-06-10",
+        "campaign_id": "CAMP142",
+        "comment": "Too many details, hard to follow."
+    },
+    {
+        "username": "user_fb78",
+        "feedback_date": "2025-03-26",
+        "campaign_id": "CAMP949",
+        "comment": "Not very engaging."
+    },
+    {
+        "username": "user11",
+        "feedback_date": "2025-05-29",
+        "campaign_id": "CAMP799",
+        "comment": "Not very engaging."
+    },
+    {
+        "username": "user_fb64",
+        "feedback_date": "2025-03-15",
+        "campaign_id": "CAMP151",
+        "comment": "Loved the product presentation."
+    },
+    {
+        "username": "user_fb79",
+        "feedback_date": "2025-01-07",
+        "campaign_id": "CAMP891",
+        "comment": "Creative and fun approach!"
+    },
+    {
+        "username": "user_fb36",
+        "feedback_date": "2025-01-20",
+        "campaign_id": "CAMP693",
+        "comment": "Creative and fun approach!"
+    },
+    {
+        "username": "user_fb60",
+        "feedback_date": "2025-08-28",
+        "campaign_id": "CAMP216",
+        "comment": "Clear and concise message."
+    },
+    {
+        "username": "user_fb89",
+        "feedback_date": "2025-02-09",
+        "campaign_id": "CAMP322",
+        "comment": "Too many details, hard to follow."
+    },
+    {
+        "username": "user_fb73",
+        "feedback_date": "2025-04-07",
+        "campaign_id": "CAMP306",
+        "comment": "Great campaign!"
+    },
+    {
+        "username": "user_fb80",
+        "feedback_date": "2025-05-16",
+        "campaign_id": "CAMP767",
+        "comment": "Loved the product presentation."
+    },
+    {
+        "username": "user10",
+        "feedback_date": "2025-02-27",
+        "campaign_id": "CAMP355",
+        "comment": "Not very engaging."
+    },
+    {
+        "username": "user_fb19",
+        "feedback_date": "2025-04-13",
+        "campaign_id": "CAMP590",
+        "comment": "Loved the product presentation."
+    },
+    {
+        "username": "user_fb56",
+        "feedback_date": "2025-03-29",
+        "campaign_id": "CAMP672",
+        "comment": "Excellent marketing strategy."
+    },
+    {
+        "username": "user_fb79",
+        "feedback_date": "2025-08-22",
+        "campaign_id": "CAMP184",
+        "comment": "Not very engaging."
+    },
+    {
+        "username": "user_fb75",
+        "feedback_date": "2025-10-13",
+        "campaign_id": "CAMP801",
+        "comment": "Creative and fun approach!"
+    },
+    {
+        "username": "user_fb35",
+        "feedback_date": "2025-01-31",
+        "campaign_id": "CAMP730",
+        "comment": "Excellent marketing strategy."
+    },
+    {
+        "username": "user_fb71",
+        "feedback_date": "2025-05-29",
+        "campaign_id": "CAMP114",
+        "comment": "Creative and fun approach!"
+    },
+    {
+        "username": "user_fb21",
+        "feedback_date": "2025-06-24",
+        "campaign_id": "CAMP464",
+        "comment": "Loved the product presentation."
+    },
+    {
+        "username": "user_fb41",
+        "feedback_date": "2025-08-28",
+        "campaign_id": "CAMP186",
+        "comment": "Great campaign!"
+    },
+    {
+        "username": "user_fb62",
+        "feedback_date": "2025-03-22",
+        "campaign_id": "CAMP944",
+        "comment": "Could be better organized."
+    },
+    {
+        "username": "user12",
+        "feedback_date": "2025-01-23",
+        "campaign_id": "CAMP703",
+        "comment": "Clear and concise message."
+    },
+    {
+        "username": "user_fb77",
+        "feedback_date": "2025-08-07",
+        "campaign_id": "CAMP643",
+        "comment": "Great campaign!"
+    },
+    {
+        "username": "user_fb49",
+        "feedback_date": "2025-02-18",
+        "campaign_id": "CAMP693",
+        "comment": "Too many details, hard to follow."
+    },
+    {
+        "username": "user_fb88",
+        "feedback_date": "2025-09-21",
+        "campaign_id": "CAMP931",
+        "comment": "Excellent marketing strategy."
+    },
+    {
+        "username": "user_fb98",
+        "feedback_date": "2025-04-28",
+        "campaign_id": "CAMP351",
+        "comment": "Clear and concise message."
+    },
+    {
+        "username": "user_fb20",
+        "feedback_date": "2025-01-07",
+        "campaign_id": "CAMP949",
+        "comment": "Loved the product presentation."
+    },
+    {
+        "username": "user_fb20",
+        "feedback_date": "2025-08-06",
+        "campaign_id": "CAMP685",
+        "comment": "Too many details, hard to follow."
+    },
+    {
+        "username": "user_fb30",
+        "feedback_date": "2025-01-05",
+        "campaign_id": "CAMP638",
+        "comment": "Loved the product presentation."
+    },
+    {
+        "username": "user_fb19",
+        "feedback_date": "2025-07-12",
+        "campaign_id": "CAMP541",
+        "comment": "Loved the product presentation."
+    },
+    {
+        "username": "user_fb93",
+        "feedback_date": "2025-02-24",
+        "campaign_id": "CAMP502",
+        "comment": "Not very engaging."
+    },
+    {
+        "username": "user_fb27",
+        "feedback_date": "2025-08-11",
+        "campaign_id": "CAMP278",
+        "comment": "Not very engaging."
+    },
+    {
+        "username": "user_fb39",
+        "feedback_date": "2025-10-15",
+        "campaign_id": "CAMP222",
+        "comment": "Excellent marketing strategy."
+    },
+    {
+        "username": "user10",
+        "feedback_date": "2025-06-25",
+        "campaign_id": "CAMP828",
+        "comment": "Great campaign!"
+    },
+    {
+        "username": "user_fb66",
+        "feedback_date": "2025-04-13",
+        "campaign_id": "CAMP528",
+        "comment": "Excellent marketing strategy."
+    },
+    {
+        "username": "user_fb21",
+        "feedback_date": "2025-02-28",
+        "campaign_id": "CAMP520",
+        "comment": "Creative and fun approach!"
+    },
+    {
+        "username": "user_fb38",
+        "feedback_date": "2025-05-27",
+        "campaign_id": "CAMP476",
+        "comment": "Creative and fun approach!"
+    },
+    {
+        "username": "user_fb80",
+        "feedback_date": "2025-09-28",
+        "campaign_id": "CAMP428",
+        "comment": "Excellent marketing strategy."
+    },
+    {
+        "username": "user_fb43",
+        "feedback_date": "2025-06-03",
+        "campaign_id": "CAMP935",
+        "comment": "Creative and fun approach!"
+    },
+    {
+        "username": "user_fb21",
+        "feedback_date": "2025-06-08",
+        "campaign_id": "CAMP726",
+        "comment": "Not very engaging."
+    }
+]

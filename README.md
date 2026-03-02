@@ -220,7 +220,7 @@ Consulter le rapport :
 
 ---
 
-# 7) Intégration api_pusher (optionnel)
+# 7) Intégration api_pusher
 
 Le projet peut recevoir des feedbacks depuis `api_pusher` (repo externe).  
 Config (extrait) : `api_pusher/src/config.ini` :
@@ -253,7 +253,85 @@ Attendu :
 
 ---
 
-## Roadmap (très court)
-- Stabiliser Airflow (DAGs streaming/batch, métadonnées d’exécution)
-- Metabase : dashboards ventes + sentiment
-- Gouvernance : qualité, monitoring, lineage plus fin
+# 8) Metabase (Dashboard)
+
+## Objectif
+
+Metabase permet de visualiser les données du projet NDAI stockées dans PostgreSQL :
+
+- `campaign_feedback_enriched`
+- `sales`
+- `campaign_product_mapping`
+
+Il sert à la démonstration métier et au suivi des résultats du pipeline.
+
+---
+
+## Lancer Metabase
+
+Metabase est inclus dans `infra/docker-compose.yml`.
+
+Depuis `infra/` :
+
+```powershell
+docker compose up -d metabase
+```
+
+Accéder à Metabase :
+
+ http://localhost:3001
+
+---
+
+## Configuration initiale
+
+### 1️⃣ Créer un compte admin
+
+Choisir email et mot de passe.
+
+---
+
+### 2️⃣ Ajouter PostgreSQL comme Data Source
+
+Paramètres :
+
+- Host : `postgres`
+- Port : `5432`
+- Database : `ndai`
+- User : `ndai`
+- Password : `ndai`
+
+Tester la connexion puis **Save**
+
+Metabase va détecter automatiquement les tables du projet.
+
+---
+
+## Vérification connexion base
+
+Si Metabase ne voit pas les tables :
+
+```powershell
+docker compose exec postgres psql -U ndai -d ndai -c "\dt"
+```
+
+Vous devez voir :
+
+- `sales`
+- `campaign_feedback_enriched`
+- `campaign_product_mapping`
+
+---
+
+## Mettre à jour les données dans Metabase
+
+Après insertion de nouvelles données :
+
+Dans Metabase → **Admin → Databases → Sync database schema**
+
+Ou redémarrer Metabase :
+
+```powershell
+docker compose restart metabase
+```
+

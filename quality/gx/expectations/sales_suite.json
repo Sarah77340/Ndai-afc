@@ -1,0 +1,48 @@
+{
+  "expectations": [
+    {
+      "id": "2d37d17c-c885-4ebf-a626-2cca70b5eeff",
+      "kwargs": {
+        "column": "sale_date"
+      },
+      "meta": {},
+      "severity": "critical",
+      "type": "expect_column_to_exist"
+    },
+    {
+      "id": "07680b3b-052a-4f8f-a73f-1e438c1078b8",
+      "kwargs": {
+        "column": "sale_date"
+      },
+      "meta": {},
+      "severity": "critical",
+      "type": "expect_column_values_to_not_be_null"
+    },
+    {
+      "id": "f5ffb82e-2550-41ba-8453-77d860cf936b",
+      "kwargs": {
+        "column": "quantity",
+        "min_value": 1.0
+      },
+      "meta": {},
+      "severity": "critical",
+      "type": "expect_column_values_to_be_between"
+    },
+    {
+      "id": "be2b4c89-9d7e-4339-86b9-164993a79975",
+      "kwargs": {
+        "column": "total_amount",
+        "min_value": 0.0
+      },
+      "meta": {},
+      "severity": "critical",
+      "type": "expect_column_values_to_be_between"
+    }
+  ],
+  "id": "7006aba3-3c2f-40f3-bbdf-213a59210cd7",
+  "meta": {
+    "great_expectations_version": "1.13.0"
+  },
+  "name": "sales_suite",
+  "notes": null
+}

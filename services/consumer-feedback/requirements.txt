@@ -1,0 +1,5 @@
+confluent-kafka==2.5.3
+psycopg2-binary==2.9.9
+vaderSentiment==3.3.2
+langdetect==1.0.9
+requests==2.32.3

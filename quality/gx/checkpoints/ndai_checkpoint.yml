@@ -1,0 +1,14 @@
+name: ndai_checkpoint
+config_version: 1.0
+class_name: SimpleCheckpoint
+
+validations:
+  - batch_request:
+      datasource_name: postgres_datasource
+      data_asset_name: sales_query
+    expectation_suite_name: sales_suite
+
+  - batch_request:
+      datasource_name: postgres_datasource
+      data_asset_name: feedback_query
+    expectation_suite_name: feedback_suite

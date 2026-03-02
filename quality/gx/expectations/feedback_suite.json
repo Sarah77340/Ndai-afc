@@ -1,0 +1,42 @@
+{
+  "expectations": [
+    {
+      "id": "ba7981b1-e03e-4e2a-b4c4-0a5c5ee5c9f7",
+      "kwargs": {
+        "column": "campaign_id"
+      },
+      "meta": {},
+      "severity": "critical",
+      "type": "expect_column_to_exist"
+    },
+    {
+      "id": "ce2a548a-450d-45f6-928f-f73cebc495a9",
+      "kwargs": {
+        "column": "campaign_id"
+      },
+      "meta": {},
+      "severity": "critical",
+      "type": "expect_column_values_to_not_be_null"
+    },
+    {
+      "id": "14a7c79c-dd97-4b80-aaa0-c98c74c6d603",
+      "kwargs": {
+        "column": "sentiment_label",
+        "value_set": [
+          "positive",
+          "neutral",
+          "negative"
+        ]
+      },
+      "meta": {},
+      "severity": "critical",
+      "type": "expect_column_values_to_be_in_set"
+    }
+  ],
+  "id": "78d61913-ad98-420a-891b-6d106f69488d",
+  "meta": {
+    "great_expectations_version": "1.13.0"
+  },
+  "name": "feedback_suite",
+  "notes": null
+}

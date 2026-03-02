@@ -6,7 +6,7 @@ from requests.auth import HTTPBasicAuth # Ajout pour le Basic Auth
 
 # Configuration (Ajustée selon tes tests curl précédents)
 API_URL = "http://localhost:8000/feedback"
-API_KEY = "ndai-secret" 
+API_KEY = "ceseramacle123" 
 BASIC_USER = "ndai"
 BASIC_PASS = "ndai-secret"
 INPUT_FILE = "data/feedback_data.json" # Vérifie bien le chemin de ton fichier
